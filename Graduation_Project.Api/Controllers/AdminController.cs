@@ -38,13 +38,18 @@ namespace Graduation_Project.Api.Controllers
         public async Task<IActionResult> AddDoctor([FromBody] RegisterAsDoctorRequest model)
         {
             if (!ModelState.IsValid) BadRequest(ModelState);
+            var res = await _accountServices.AddDoctor(model);
+            if (!res.IsAuthenticated) {
+                return BadRequest(res.Message );
+            }
 
-            return Ok(await _accountServices.AddDoctor(model));
+            return Ok(res);
         }
         [HttpPut("EditDoctor/{id}")]
         public async Task<IActionResult> UpdateDoctor([FromBody] RegisterAsDoctorRequest model, string id)
         {
             if (!ModelState.IsValid) BadRequest(ModelState);
+            
 
             return Ok(await _adminservice.UpdateDoctor(model, id));
         }

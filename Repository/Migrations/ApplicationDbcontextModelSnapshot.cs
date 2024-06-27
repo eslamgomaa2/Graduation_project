@@ -105,6 +105,10 @@ namespace Repository.Migrations
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -392,7 +396,7 @@ namespace Repository.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "eef8bffe-efc4-4c41-b8df-7d05d28d8e6b",
+                            ConcurrencyStamp = "cbc6195b-4a08-4bfd-b371-a4d495e9f1d5",
                             Email = "Admin@example.com",
                             EmailConfirmed = true,
                             FirstName = "Admin",
@@ -400,10 +404,10 @@ namespace Repository.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@EXAMPLE.COM",
                             NormalizedUserName = "ADMIN@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA4OeAkk9QgGuoEGBgbtvDkGNsn8DFXkVbYiVhb4zVs5SjQD+wZGlzyH/tVseWpmfg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAaHKou+8fp4jRoxVm84hOB26P00N++LRvmTHEBK7Q24XD4jxU/z/uZXchB/aI1U1w==",
                             PhoneNumber = "012152001",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "8e9d114e-0645-472d-9843-57eea135dab8",
+                            SecurityStamp = "5c7fac49-70a9-404b-b574-35093214a20a",
                             TwoFactorEnabled = false,
                             UserName = "Admin@example.com"
                         });

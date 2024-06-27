@@ -14,6 +14,8 @@ using Domins.Model;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 using Domins.Helper;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.StaticFiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -115,6 +117,10 @@ builder.Services.AddSwaggerGen(o =>
 
 
 var app = builder.Build();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new NullFileProvider()
+});
 
 
 

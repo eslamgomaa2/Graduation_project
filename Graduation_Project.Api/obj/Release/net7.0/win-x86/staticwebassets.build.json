@@ -1,37 +1,11 @@
 {
   "Version": 1,
-  "Hash": "nXKIoj7cbWDavG3QMeG9Yyo/qdrkrjUYQe0xBIuje2w=",
+  "Hash": "08n5en7RWkYHX4Hw6OT2BiMH7JazfjAWzy0VXmfHI44=",
   "Source": "Graduation_Project.Api",
   "BasePath": "_content/Graduation_Project.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [
-    {
-      "Name": "Graduation_Project.Api\\wwwroot",
-      "Source": "Graduation_Project.Api",
-      "ContentRoot": "C:\\Users\\Softlaptop\\Desktop\\.net_projects\\graduation_project\\Graduation_Project.Api\\wwwroot\\",
-      "BasePath": "_content/Graduation_Project.Api",
-      "Pattern": "**"
-    }
-  ],
-  "Assets": [
-    {
-      "Identity": "C:\\Users\\Softlaptop\\Desktop\\.net_projects\\graduation_project\\Graduation_Project.Api\\wwwroot\\lib\\jquery\\jquery.min.js",
-      "SourceId": "Graduation_Project.Api",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Softlaptop\\Desktop\\.net_projects\\graduation_project\\Graduation_Project.Api\\wwwroot\\",
-      "BasePath": "_content/Graduation_Project.Api",
-      "RelativePath": "lib/jquery/jquery.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\jquery.min.js"
-    }
-  ]
+  "DiscoveryPatterns": [],
+  "Assets": []
 }

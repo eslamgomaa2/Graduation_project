@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Repository.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class commitall : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -89,7 +89,12 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    FName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    LName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -230,10 +235,11 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    HeartRate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    OxygenRate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    LName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    patientEmail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     DoctorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -245,14 +251,13 @@ namespace Repository.Migrations
                         principalSchema: "Identity",
                         principalTable: "Doctors",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Patients_Users_UserId",
                         column: x => x.UserId,
                         principalSchema: "Identity",
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -262,7 +267,7 @@ namespace Repository.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AlarmMessage = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AlarmMessage = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TimeStamp = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PatientId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -275,7 +280,31 @@ namespace Repository.Migrations
                         principalSchema: "Identity",
                         principalTable: "Patients",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SensorData",
+                schema: "Identity",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    HeartRate = table.Column<int>(type: "int", nullable: false),
+                    OxygenRate = table.Column<int>(type: "int", nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PatientId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SensorData", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_SensorData_Patients_PatientId",
+                        column: x => x.PatientId,
+                        principalSchema: "Identity",
+                        principalTable: "Patients",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -286,20 +315,29 @@ namespace Repository.Migrations
                 {
                     { "1", null, "Admin", "ADMIN" },
                     { "2", null, "Patient", "PATIENT" },
-                    { "3", null, "Doctor", "DOCTOR" }
+                    { "3", null, "Doctor", "DOCTOR" },
+                    { "4", null, "Ambulance", "AMBULANCE" }
                 });
 
             migrationBuilder.InsertData(
                 schema: "Identity",
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1", 0, "eaa9b979-0d2c-4e39-bb60-f98a772b5f74", "admin@example.com", true, null, null, false, null, "ADMIN@EXAMPLE.COM", "ADMIN@EXAMPLE.COM", "1254515156", null, false, "", false, "admin@example.com" });
+                values: new object[,]
+                {
+                    { "1", 0, "75856675-5f49-4c00-b9cf-f463a27a6f89", "Admin@gmail.com", true, "Admin", "Admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAIAAYagAAAAENtuJ9GuQ5w4O14PzRfM5Q5JozLczHoBiHa0EUqqgegcJSU4QvcDvT5EfXK7Dpyo2Q==", "012152001", true, "6f64495e-d680-4d60-a5e7-ed7693f7ddba", false, "Admin" },
+                    { "2", 0, "568c4e2a-4e91-4a08-a625-ba20a78ffc68", "Ambulance@gmail.com", true, "Ambulance", "Ambulance", false, null, "AMBULANCE@GMAIL.COM", "AMBULANCE@GMAIL.COM", "AQAAAAIAAYagAAAAEGQDmCWSV/BRoM1MC0PZUmKhOIbr/VnCGfOux4NurmvnKfRoL003nEXfaXXiIWKf4g==", "123", true, "71d6f4f5-774f-45e3-9680-3f7d970f0b17", false, "Ambulance" }
+                });
 
             migrationBuilder.InsertData(
                 schema: "Identity",
                 table: "UserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "1", "1" });
+                values: new object[,]
+                {
+                    { "1", "1" },
+                    { "4", "2" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Alarms_PatientId",
@@ -338,6 +376,12 @@ namespace Repository.Migrations
                 column: "NormalizedName",
                 unique: true,
                 filter: "[NormalizedName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SensorData_PatientId",
+                schema: "Identity",
+                table: "SensorData",
+                column: "PatientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserClaims_UserId",
@@ -379,6 +423,10 @@ namespace Repository.Migrations
 
             migrationBuilder.DropTable(
                 name: "RoleClaims",
+                schema: "Identity");
+
+            migrationBuilder.DropTable(
+                name: "SensorData",
                 schema: "Identity");
 
             migrationBuilder.DropTable(

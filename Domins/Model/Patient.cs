@@ -19,9 +19,11 @@ namespace Domins.Model
             [MaxLength(100)]
             [Required]
         public string ? UserName { get; set; }
-            [EmailAddress]
+           
+            [MaxLength(50)]
             [Required]
-            public string ?Email { get; set; }
+            public string ?patientEmail { get; set; }
+       
        
             [ForeignKey("User")]
                 

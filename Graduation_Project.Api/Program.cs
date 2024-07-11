@@ -40,6 +40,7 @@ builder.Services.AddTransient<IAlarmServices, AlarmServices>();
 builder.Services.AddTransient<IAdminService, AdminService>();
 builder.Services.AddTransient<IDoctorService, DoctorService>();
 builder.Services.AddTransient<IEmailService, EmailService>();
+builder.Services.AddTransient<IWarningService, WarningService>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddSingleton<FirebaseSensorService>(sp =>
@@ -84,7 +85,7 @@ builder.Services.AddAuthentication(o =>
 //builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "healthcare System ", Version = "v1" });
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Elderly Care System ", Version = "v1" });
     options.DescribeAllParametersInCamelCase();
     options.InferSecuritySchemes();
 });

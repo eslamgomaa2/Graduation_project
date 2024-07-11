@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace Repository.Interfaces
 {
-    public  interface IDoctorService
+    public interface IDoctorService
     {
-        public  Task<IEnumerable<PatinetDestinationDto>> GetDoctorPatient(string userid);
+        public Task<IEnumerable<PatinetDestinationDto>> GetDoctorPatient(string userid);
+
     }
 }

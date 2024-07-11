@@ -21,6 +21,12 @@ public static class DefaultRoles
             Id = "3",
             Name = Roles.Doctor.ToString(),
             NormalizedName = Roles.Doctor.ToString().ToUpper()
+        }, 
+        new ()
+        {
+            Id ="4",
+            Name = Roles.Ambulance.ToString(),
+            NormalizedName = Roles.Ambulance.ToString().ToUpper()
         }
 
     };

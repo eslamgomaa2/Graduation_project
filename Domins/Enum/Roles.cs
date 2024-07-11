@@ -7,7 +7,9 @@ namespace OA.Domain.Enum
         
         Admin,
         Doctor,
-        Patient
+        Patient,
+        Ambulance
+
     }
 
    

@@ -105,10 +105,6 @@ namespace Repository.Migrations
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("FName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -120,13 +116,17 @@ namespace Repository.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("patientEmail")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -208,6 +208,12 @@ namespace Repository.Migrations
                             Id = "3",
                             Name = "Doctor",
                             NormalizedName = "DOCTOR"
+                        },
+                        new
+                        {
+                            Id = "4",
+                            Name = "Ambulance",
+                            NormalizedName = "AMBULANCE"
                         });
                 });
 
@@ -299,6 +305,11 @@ namespace Repository.Migrations
                         {
                             UserId = "1",
                             RoleId = "1"
+                        },
+                        new
+                        {
+                            UserId = "2",
+                            RoleId = "4"
                         });
                 });
 
@@ -396,20 +407,39 @@ namespace Repository.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cbc6195b-4a08-4bfd-b371-a4d495e9f1d5",
-                            Email = "Admin@example.com",
+                            ConcurrencyStamp = "75856675-5f49-4c00-b9cf-f463a27a6f89",
+                            Email = "Admin@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Admin",
                             LastName = "Admin",
                             LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@EXAMPLE.COM",
-                            NormalizedUserName = "ADMIN@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAaHKou+8fp4jRoxVm84hOB26P00N++LRvmTHEBK7Q24XD4jxU/z/uZXchB/aI1U1w==",
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN@GMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAENtuJ9GuQ5w4O14PzRfM5Q5JozLczHoBiHa0EUqqgegcJSU4QvcDvT5EfXK7Dpyo2Q==",
                             PhoneNumber = "012152001",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "5c7fac49-70a9-404b-b574-35093214a20a",
+                            SecurityStamp = "6f64495e-d680-4d60-a5e7-ed7693f7ddba",
                             TwoFactorEnabled = false,
-                            UserName = "Admin@example.com"
+                            UserName = "Admin"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "568c4e2a-4e91-4a08-a625-ba20a78ffc68",
+                            Email = "Ambulance@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Ambulance",
+                            LastName = "Ambulance",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "AMBULANCE@GMAIL.COM",
+                            NormalizedUserName = "AMBULANCE@GMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGQDmCWSV/BRoM1MC0PZUmKhOIbr/VnCGfOux4NurmvnKfRoL003nEXfaXXiIWKf4g==",
+                            PhoneNumber = "123",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "71d6f4f5-774f-45e3-9680-3f7d970f0b17",
+                            TwoFactorEnabled = false,
+                            UserName = "Ambulance"
                         });
                 });
 
@@ -445,9 +475,7 @@ namespace Repository.Migrations
 
                     b.HasOne("OA.Domain.Auth.ApplicationUser", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Doctor");
 

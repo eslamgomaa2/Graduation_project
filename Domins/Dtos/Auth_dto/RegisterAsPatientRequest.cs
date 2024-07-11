@@ -1,4 +1,5 @@
 ﻿using Domins.Model;
+using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
 namespace Domins.Dtos.Auth_dto
@@ -18,6 +19,7 @@ namespace Domins.Dtos.Auth_dto
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+       
       
         public int DoctorId { get; set; }
         public string phoneNumber { get; set; }

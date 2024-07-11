@@ -128,6 +128,7 @@ namespace Repository.Implementation
             {
                 FName = model.FirstName,
                 LName = model.LastName,
+                patientEmail = model.Email,
                 UserName = model.UserName,
                 DoctorId = model.DoctorId,
                 UserId = newuser.Id

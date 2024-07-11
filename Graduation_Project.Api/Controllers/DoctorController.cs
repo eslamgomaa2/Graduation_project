@@ -49,8 +49,6 @@ namespace Graduation_Project.Api.Controllers
             var res = await _baserepository.GetAllAsync();
             return Ok(res.Select(o=>new { o.Id,o.FName,o.LName,o.UserName,o.Email, o.PhoneNumber,o.Password,o.UserId }));
         }
-
         
-
     }
 }

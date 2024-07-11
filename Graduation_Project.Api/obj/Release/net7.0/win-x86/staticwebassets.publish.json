@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "vrPUW3noBiOsz/RPrTtrp8Pa6D9ZtHmat2piOCJloXc=",
+  "Hash": "oK5+2Nxo/87949he9grl9xlCRmATSZwyuU9rck+lRrk=",
   "Source": "Graduation_Project.Api",
   "BasePath": "_content/Graduation_Project.Api",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Graduation_Project.Api\\wwwroot",
+      "Source": "Graduation_Project.Api",
+      "ContentRoot": "C:\\Users\\Softlaptop\\Desktop\\.net_projects\\graduation_project\\Graduation_Project.Api\\wwwroot\\",
+      "BasePath": "_content/Graduation_Project.Api",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

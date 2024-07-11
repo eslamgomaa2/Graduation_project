@@ -4,8 +4,18 @@ namespace Domins.Dtos.Dto
     public class PatinetDestinationDto
     {
 
-        [MaxLength(100)]
-        public string Name { get; set; }
+       
+        public int Id { get; set; }
+
+        
+        public string? FName { get; set; }
+       
+        public string? LName { get; set; }
+        
+        public string? UserName { get; set; }
+
+        
+        public string? patientEmail { get; set; }
 
     }
 }

@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using Domins.Dtos.Dto;
+using MailKit;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using OA.Service.Implementation;
 using Repository.Interfaces;
 
 namespace Repository.Implementation
@@ -9,12 +12,16 @@ namespace Repository.Implementation
     {
         private readonly ApplicationDbcontext _dbcontext;
         private readonly IMapper _mapper;
+        
+
+
 
 
         public DoctorService(ApplicationDbcontext dbcontext, IMapper mapper)
         {
             _dbcontext = dbcontext;
             _mapper = mapper;
+           
         }
 
         public async Task<IEnumerable<PatinetDestinationDto>> GetDoctorPatient(string userid)
@@ -30,5 +37,8 @@ namespace Repository.Implementation
 
             return destinationDtos;
         }
+
+
+      
     }
 }

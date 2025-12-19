@@ -1,4 +1,5 @@
 ﻿using Domins.Dtos.Dto;
+using Domins.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Interfaces;
@@ -28,7 +29,7 @@ namespace Graduation_Project.Api.Controllers
 
         
         [HttpPost("AddAlarm")]
-        public async Task<IActionResult> AddAlarm([FromBody] Alarmdto  model)
+        public async Task<IActionResult> AddAlarm([FromBody] Alarm  model)
         {
  
             return Ok( await _alarmsService.Create(model));

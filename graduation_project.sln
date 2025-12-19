@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domins", "Domins\Domins.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seeding_Data", "Seeding_Data\Seeding_Data.csproj", "{A6EA6F4C-77D4-4187-954E-7C132ACCE5A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{266693A8-7912-4814-8601-CBDAADB594F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Repository\Services.csproj", "{266693A8-7912-4814-8601-CBDAADB594F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

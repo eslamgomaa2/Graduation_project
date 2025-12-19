@@ -10,3 +10,4 @@ C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Debug\ne
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Debug\net7.0\refint\Domins.dll
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Debug\net7.0\Domins.pdb
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Debug\net7.0\ref\Domins.dll
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Debug\net7.0\Domins.sourcelink.json

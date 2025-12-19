@@ -5,7 +5,7 @@ namespace Repository.Interfaces
 {
     public interface IAlarmServices:IBaseRepository<Alarm>
     {
-        public Task<Alarmdto> Create(Alarmdto model);
+        public Task<Alarm> Create(Alarm model);
       
         public Task<IEnumerable<Alarmdto>> GetPtientAlarms();
         public Task<Alarmdto> Update(Alarmdto model,int id);

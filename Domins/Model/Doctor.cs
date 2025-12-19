@@ -1,6 +1,7 @@
 ﻿using OA.Domain.Auth;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domins.Model
 {
@@ -19,7 +20,8 @@ namespace Domins.Model
         public string UserName { get; set; }
         [Required]
         [MaxLength(12)]
-        public string PhoneNumber { get; set; }
+        [CreditCard]
+        public string creditcardNumber { get; set; }
         [Required]
         public string Email { get; set; }
         [Required]

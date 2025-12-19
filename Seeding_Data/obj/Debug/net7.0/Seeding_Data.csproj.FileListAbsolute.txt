@@ -8,8 +8,9 @@ C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\De
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\Debug\net7.0\Seeding_Data.AssemblyInfoInputs.cache
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\Debug\net7.0\Seeding_Data.AssemblyInfo.cs
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\Debug\net7.0\Seeding_Data.csproj.CoreCompileInputs.cache
-C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\Debug\net7.0\Seeding_Data.csproj.CopyComplete
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\Debug\net7.0\Seeding_Data.dll
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\Debug\net7.0\refint\Seeding_Data.dll
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\Debug\net7.0\Seeding_Data.pdb
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\Debug\net7.0\ref\Seeding_Data.dll
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\Debug\net7.0\Seeding_Data.sourcelink.json
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Seeding_Data\obj\Debug\net7.0\Seeding_.B1500A79.Up2Date

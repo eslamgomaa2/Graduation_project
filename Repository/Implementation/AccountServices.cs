@@ -186,7 +186,6 @@ namespace Repository.Implementation
                 UserId = newuser.Id,
                 FName = request.FirstName,
                 LName = request.LastName,
-                PhoneNumber=request.phoneNumber,
                 Email = request.Email,
                 Password = request.Password,
               

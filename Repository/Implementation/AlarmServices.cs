@@ -21,7 +21,7 @@ namespace Repository.Implementation
             _mapper = mapper;
         }
 
-        public async Task<Alarmdto> Create(Alarmdto model)
+        public async Task<Alarm> Create(Alarm model)
         {
             var userid = _httpcontext.HttpContext.User.Claims.First(o => o.Type == ClaimTypes.NameIdentifier).Value;
            
@@ -35,12 +35,13 @@ namespace Repository.Implementation
             {
                 AlarmMessage = model.AlarmMessage,
                 TimeStamp = DateTime.Now,
-                PatientId = patient.Id
+                PatientId= patient.Id,
+                
             };
             await _dbcontext.Alarms.AddAsync(alarm);
             await _dbcontext.SaveChangesAsync();
-            var map = _mapper.Map<Alarmdto>(alarm);
-            return map;
+            //var map = _mapper.Map<Alarmdto>(alarm);
+            return alarm;
            
         }
 

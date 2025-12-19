@@ -33,8 +33,8 @@ namespace Domins.Model
             [ForeignKey("Doctor")]
             public int DoctorId { get; set; }
 
-            public virtual Doctor? Doctor { get; set; }
-            public virtual List<Alarm>? alarms { get; set; }
+            public  Doctor? Doctor { get; set; }
+            public  List<Alarm>? alarms { get; set; }
 
 
 

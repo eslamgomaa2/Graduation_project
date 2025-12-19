@@ -25,7 +25,8 @@ namespace Repository
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.EnableSensitiveDataLogging();
+            optionsBuilder.EnableSensitiveDataLogging(true);
+            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

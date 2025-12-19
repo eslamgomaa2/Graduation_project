@@ -102,3 +102,4 @@ C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Graduation_Project.
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Graduation_Project.Api\bin\Debug\net7.0\System.Runtime.InteropServices.WindowsRuntime.dll
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Graduation_Project.Api\bin\Debug\net7.0\libman.json
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Graduation_Project.Api\bin\Debug\net7.0\Graduation_Project.Api.staticwebassets.runtime.json
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Graduation_Project.Api\obj\Debug\net7.0\Graduation_Project.Api.sourcelink.json

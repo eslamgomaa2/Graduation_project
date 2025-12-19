@@ -5,10 +5,10 @@ namespace Seeding_Data.Seeds
 {
     public static class DefaultUsers
     {
-        public static List<ApplicationUser> GetDefaultUsers { get; } = new()
+        public static List<ApplicationUser> GetDefaultUsers { get; } = new List<ApplicationUser>()
         {
 
-                new ()
+                new ApplicationUser ()
             {
 
                 Id = "1",
@@ -25,7 +25,7 @@ namespace Seeding_Data.Seeds
                 PasswordHash = new PasswordHasher<ApplicationUser>().HashPassword(null,"Admin123!")
 
             },
-            new ()
+            new ApplicationUser  ()
             {
                 Id = "2",
                 FirstName = "Ambulance",

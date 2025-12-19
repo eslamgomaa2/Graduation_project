@@ -17,3 +17,4 @@ C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Repository\obj\Debu
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Repository\obj\Debug\net7.0\ref\Repository.dll
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Repository\bin\Debug\net7.0\Repository.runtimeconfig.json
 C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Repository\obj\Debug\net7.0\Repository.genruntimeconfig.cache
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Repository\obj\Debug\net7.0\Repository.sourcelink.json

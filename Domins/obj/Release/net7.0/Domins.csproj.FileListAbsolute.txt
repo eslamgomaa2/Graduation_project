@@ -1,0 +1,12 @@
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\bin\Release\net7.0\Domins.deps.json
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\bin\Release\net7.0\Domins.dll
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\bin\Release\net7.0\Domins.pdb
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Release\net7.0\Domins.csproj.AssemblyReference.cache
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Release\net7.0\Domins.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Release\net7.0\Domins.AssemblyInfoInputs.cache
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Release\net7.0\Domins.AssemblyInfo.cs
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Release\net7.0\Domins.csproj.CoreCompileInputs.cache
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Release\net7.0\Domins.dll
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Release\net7.0\refint\Domins.dll
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Release\net7.0\Domins.pdb
+C:\Users\Softlaptop\Desktop\.net_projects\graduation_project\Domins\obj\Release\net7.0\ref\Domins.dll

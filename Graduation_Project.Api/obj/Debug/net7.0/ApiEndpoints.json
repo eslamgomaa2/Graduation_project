@@ -1,0 +1,238 @@
+[
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AccountServiceController",
+    "Method": "ForgetPassword",
+    "RelativePath": "api/AccountService/ForgetPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OA.Domain.Auth.ForgotPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AccountServiceController",
+    "Method": "Login",
+    "RelativePath": "api/AccountService/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OA.Domain.Auth.AuthenticationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AccountServiceController",
+    "Method": "Register",
+    "RelativePath": "api/AccountService/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Domins.Dtos.Auth_dto.RegisterAsPatientRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AccountServiceController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/AccountService/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OA.Domain.Auth.ResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AdminController",
+    "Method": "AddDoctor",
+    "RelativePath": "Api/Admin/AddDoctor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OA.Domain.Auth.RegisterAsDoctorRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AdminController",
+    "Method": "DeleteDoctor",
+    "RelativePath": "Api/Admin/DeleteDoctor/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AdminController",
+    "Method": "UpdateDoctor",
+    "RelativePath": "Api/Admin/EditDoctor/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OA.Domain.Auth.RegisterAsDoctorRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AlarmController",
+    "Method": "AddAlarm",
+    "RelativePath": "api/Alarm/AddAlarm",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Domins.Model.Alarm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AlarmController",
+    "Method": "Delete",
+    "RelativePath": "api/Alarm/Delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AlarmController",
+    "Method": "Update",
+    "RelativePath": "api/Alarm/Edit/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Domins.Dtos.Dto.Alarmdto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.AlarmController",
+    "Method": "GetPatintAlarms",
+    "RelativePath": "api/Alarm/GetAlarmsfor_patient",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.DoctorController",
+    "Method": "GetDoctors",
+    "RelativePath": "api/Doctor/GetAllDoctors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.DoctorController",
+    "Method": "GetDoctorPatinets",
+    "RelativePath": "api/Doctor/GetDoctorPatinets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.PatientController",
+    "Method": "GetAllpatient",
+    "RelativePath": "api/Patient/GetAllPatient",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.WarningController",
+    "Method": "SendWarning",
+    "RelativePath": "api/Warning",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Domins.Dtos.Dto.Warningdto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Graduation_Project.Api.Controllers.SensorController",
+    "Method": "GetSensorreading",
+    "RelativePath": "Sensor_Reading",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

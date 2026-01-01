@@ -1,0 +1,25 @@
+# Build stage: restore, build and publish the app
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
+
+# Copy everything (ensures referenced projects restore). Use a narrow COPY if you want better cache.
+COPY . .
+
+# Restore (target the project to be explicit)
+RUN dotnet restore "Graduation_Project.Api/Graduation_Project.Api.csproj"
+
+# Publish the project (no native apphost to keep image small)
+RUN dotnet publish "Graduation_Project.Api/Graduation_Project.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+# Runtime stage: slim runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
+WORKDIR /app
+
+
+ENV ASPNETCORE_URLS=http://+:80
+EXPOSE 80
+
+# Copy published output from build stage
+COPY --from=build /app/publish .
+
+ENTRYPOINT ["dotnet", "Graduation_Project.Api.dll"]

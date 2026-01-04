@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Softlaptop\\Desktop\\.net_projects\\graduation_project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{266693A8-7912-4814-8601-CBDAADB594F2}|Repository\\Services.csproj|c:\\users\\softlaptop\\desktop\\.net_projects\\graduation_project\\repository\\interfaces\\inotificationstorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{266693A8-7912-4814-8601-CBDAADB594F2}|Repository\\Services.csproj|solutionrelative:repository\\interfaces\\inotificationstorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{266693A8-7912-4814-8601-CBDAADB594F2}|Repository\\Services.csproj|c:\\users\\softlaptop\\desktop\\.net_projects\\graduation_project\\repository\\implementation\\notificationstorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{266693A8-7912-4814-8601-CBDAADB594F2}|Repository\\Services.csproj|solutionrelative:repository\\implementation\\notificationstorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 201,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NotificationStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\Softlaptop\\Desktop\\.net_projects\\graduation_project\\Repository\\Implementation\\NotificationStorageService.cs",
+              "RelativeDocumentMoniker": "Repository\\Implementation\\NotificationStorageService.cs",
+              "ToolTip": "C:\\Users\\Softlaptop\\Desktop\\.net_projects\\graduation_project\\Repository\\Implementation\\NotificationStorageService.cs*",
+              "RelativeToolTip": "Repository\\Implementation\\NotificationStorageService.cs*",
+              "ViewState": "AgIAAAUAAADg+f///z8uwA0AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T22:19:38.4Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
@@ -22,6 +44,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "INotificationStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\Softlaptop\\Desktop\\.net_projects\\graduation_project\\Repository\\Interfaces\\INotificationStorageService.cs",
+              "RelativeDocumentMoniker": "Repository\\Interfaces\\INotificationStorageService.cs",
+              "ToolTip": "C:\\Users\\Softlaptop\\Desktop\\.net_projects\\graduation_project\\Repository\\Interfaces\\INotificationStorageService.cs*",
+              "RelativeToolTip": "Repository\\Interfaces\\INotificationStorageService.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T22:19:14.868Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -27,6 +27,8 @@ namespace Repository
         public DbSet<GroupMessage> GroupMessages { get; set; }
         public DbSet<BlockedUser> BlockedUsers { get; set; }
 
+        public DbSet<Notification> Notifications { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -66,8 +68,30 @@ namespace Repository
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
-           
-                modelBuilder.Entity<GroupMessage>(entity =>
+            modelBuilder.Entity<Notification>(entity =>
+            {
+                entity.ToTable("Notifications", "Identity");
+                entity.HasKey(e => e.Id);
+                entity.HasIndex(e => e.UserId);
+
+                entity.Property(e => e.Title)
+                    .HasMaxLength(200)
+                    .IsRequired();
+
+                entity.Property(e => e.Message)
+                    .HasMaxLength(2000);
+
+                entity.Property(e => e.Type)
+                    .HasConversion<int>();
+
+                entity.HasOne<ApplicationUser>()
+                      .WithMany(u => u.Notifications)
+                      .HasForeignKey(e => e.UserId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+
+
+            modelBuilder.Entity<GroupMessage>(entity =>
             {
                 entity.HasOne(e => e.Group)
                     .WithMany(g => g.Messages)

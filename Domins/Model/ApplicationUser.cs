@@ -26,6 +26,9 @@ namespace OA.Domain.Auth
         public virtual ICollection<BlockedUser> BlockedUsers { get; set; } = new List<BlockedUser>();
         public virtual ICollection<BlockedUser> BlockedByUsers { get; set; } = new List<BlockedUser>();
 
+
+
+        public virtual ICollection<Notification> Notifications { get; set; } = new List<Notification>();
         public bool OwnsToken(string token)
         {
             return this.RefreshTokens?.Find(x => x.Token == token) != null;

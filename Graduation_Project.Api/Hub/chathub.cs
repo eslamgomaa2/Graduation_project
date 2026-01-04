@@ -1,10 +1,11 @@
 ﻿
+using Domains.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
-using System.Security.Claims;
+using Services.Interfaces;
 using System.Collections.Concurrent;
-using Domains.Services;
+using System.Security.Claims;
 
 
 namespace Domains.Helper
@@ -15,6 +16,7 @@ namespace Domains.Helper
         private readonly ILogger<ChatHub> _logger;
         private readonly IUserService _userService;
         private readonly IGroupService _groupService;
+        private readonly INotificationStorageService _notificationStorage;
 
         private static readonly ConcurrentDictionary<string, HashSet<string>> _userConnections = new();
 
@@ -23,11 +25,13 @@ namespace Domains.Helper
         public ChatHub(
             ILogger<ChatHub> logger,
             IUserService userService,
-            IGroupService groupService)
+            IGroupService groupService,
+            INotificationStorageService notificationStorage)
         {
             _logger = logger;
             _userService = userService;
             _groupService = groupService;
+            this._notificationStorage = notificationStorage;
         }
 
         #region Connection Management
@@ -60,11 +64,12 @@ namespace Domains.Helper
                 await _userService.UpdateUserOnlineStatusAsync(userId, true);
 
                 _logger.LogInformation(
-                    "User {UserId} ({UserName}) connected with ConnectionId {ConnectionId}",
+                    $"User {userId} ({userName}) connected with ConnectionId {Context.ConnectionId}",
                     userId, userName, Context.ConnectionId);
 
-                // Notify user's contacts that they're online
+               
                 await Clients.Others.SendAsync("UserOnline", userId, userName);
+                await SendMissedNotificationsAsync(userId);
 
                 await base.OnConnectedAsync();
             }
@@ -102,7 +107,7 @@ namespace Domains.Helper
                   
 
                     _logger.LogInformation(
-                        "User {UserId} ({UserName}) disconnected. ConnectionId: {ConnectionId}. Reason: {Reason}",
+                        $"User {userId} ({userName}) disconnected. ConnectionId: {Context.ConnectionId}. ",
                         userId, userName, Context.ConnectionId, exception?.Message ?? "Normal disconnect");
                 }
 
@@ -114,6 +119,68 @@ namespace Domains.Helper
                     Context.ConnectionId);
             }
         }
+        private async Task SendMissedNotificationsAsync(string userId)
+        {
+            try
+            {
+                var missedNotifications = await _notificationStorage
+                    .GetUndeliveredNotificationsAsync(userId);
+
+                if (missedNotifications.Any())
+                {
+                    _logger.LogInformation(
+                        $" Sending {missedNotifications.Count} missed notifications to user {userId}",
+                        missedNotifications.Count, userId
+                    );
+
+                    await Clients.Caller.SendAsync("MissedNotificationsCount",
+                        missedNotifications.Count);
+
+                    foreach (var notification in missedNotifications)
+                    {
+                        await Clients.Caller.SendAsync("ReceiveNotification", notification);
+
+
+                        await _notificationStorage.MarkAsDeliveredAsync(notification.Id);
+
+
+                        await Task.Delay(50);
+                    }
+
+                    _logger.LogInformation(
+                        " Successfully sent all missed notifications to user {UserId}",
+                        userId
+                    );
+                }
+                else
+                {
+                    _logger.LogInformation(
+                        "✓ No missed notifications for user {UserId}",
+                        userId
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,
+                    "❌ Error sending missed notifications to user {UserId}",
+                    userId
+                );
+            }
+        }
+             public async Task MarkNotificationAsRead(int notificationId)
+        {
+            await _notificationStorage.MarkAsReadAsync(notificationId);
+            await Clients.Caller.SendAsync("NotificationMarkedAsRead", notificationId);
+        }
+
+       
+        public async Task RequestMissedNotifications()
+        {
+            var userId = Context.User?.Identity?.Name ?? Context.ConnectionId;
+            await SendMissedNotificationsAsync(userId);
+        }
+        
 
         #endregion
 
@@ -344,5 +411,7 @@ namespace Domains.Helper
         }
 
         #endregion
+
+
     }
 }

@@ -26,7 +26,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
-builder.Services.AddDbContext<ApplicationDbcontext>(opt=>opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+var connectionString= builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbcontext>(opt=>opt.UseSqlServer(connectionString));
+//builder.Services.AddDbContextPool<ApplicationDbcontext>(opt=>opt.UseNpgsql(connectionString).UseSnakeCaseNamingConvention());
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbcontext>()
     .AddDefaultTokenProviders();

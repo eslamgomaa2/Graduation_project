@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YvigHCELcB4=",
+  "dgSpecHash": "DFRhYQBQBRU=",
   "success": true,
   "projectFilePath": "C:\\Users\\Softlaptop\\Desktop\\.net_projects\\graduation_project\\Seeding_Data\\Seeding_Data.csproj",
   "expectedPackageFiles": [
@@ -55,6 +55,7 @@
     "C:\\Users\\Softlaptop\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Softlaptop\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Softlaptop\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Softlaptop\\.nuget\\packages\\npgsql\\7.0.10\\npgsql.7.0.10.nupkg.sha512",
     "C:\\Users\\Softlaptop\\.nuget\\packages\\runtime.native.system\\4.0.0\\runtime.native.system.4.0.0.nupkg.sha512",
     "C:\\Users\\Softlaptop\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\Softlaptop\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
